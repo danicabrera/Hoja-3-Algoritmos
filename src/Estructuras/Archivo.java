@@ -6,14 +6,15 @@ import java.util.Random;
 public class Archivo {
     Random rand = new Random();
     int[] lista = new int[3000];
-    int[] listaOrdenada;
+    int[] listaOrdenada= new int[3000];
 
     public Archivo(){
 
-        for (int i = 1; i <= 3000; i++){
+        for (int i = 0; i < 3000; i++){
             lista[i] = i;
+            listaOrdenada[i] = i;
         }
-        listaOrdenada = lista;
+
         this.revolver();
 
 

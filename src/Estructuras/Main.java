@@ -13,7 +13,7 @@ public class Main {
 
             resp = vista.Menu();
             if (resp == 1) {
-                sorta.Gnome(datos);
+                sorta.Gnome(datos, datos.length - 1);
                 vista.Correcto(datos, datosCorrectos);
             } else if (resp == 2) {
                 sorta.Mergesort(datos, 0, 2999);

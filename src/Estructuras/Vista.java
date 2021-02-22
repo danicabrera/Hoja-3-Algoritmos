@@ -1,4 +1,5 @@
 package Estructuras;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Vista {
@@ -36,9 +37,8 @@ public class Vista {
 
 
     public void imprimir(int[] e){
-        for (int value : e) {
-            System.out.println(value + " ");
-        }
+        System.out.println("Secuencia ordenada: ");
+        System.out.println(Arrays.toString(e));
         System.out.println(" ");
     }
 

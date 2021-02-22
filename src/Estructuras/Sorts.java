@@ -4,23 +4,25 @@ import java.util.Arrays;
 public class Sorts {
     public Sorts(){}
 
-    public void Gnome(int[] listado){
-        int num = 0;
-        while(num<3000){
-            if (num == 0){
-                num++;
+    public void Gnome(int[] listado, int num){
+        int i = 0;
+        while(i<num){
+
+            if (i == 0){
+                i++;
             }
 
-            if(listado[num] >= listado[num - 1]){
-                num++;
+            if(listado[i] >= listado[i - 1]){
+                i++;
             } else{
-                int temp1 = listado[num];
-                int temp2 = listado[num -1];
-
-                listado[num] = temp2;
-                listado[num - 1] = temp1;
+                int temp1 = listado[i];
+                listado[i] = listado[i-1];
+                listado[i - 1] = temp1;
+                i--;
             }
         }
+
+
     }
 
     public void Merge(int[] listado, int izq, int med, int der){
@@ -68,7 +70,7 @@ public class Sorts {
 
     public void Mergesort(int[] lista, int izq, int der){
         if(izq < der ){
-            int med = izq + (der - 1)/2;
+            int med = (izq + der)/2;
             Mergesort(lista, izq, med);
             Mergesort(lista, med + 1, der);
 
