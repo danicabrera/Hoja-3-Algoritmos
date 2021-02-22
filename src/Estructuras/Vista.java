@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Vista {
 
     public Vista(){};
-    Scanner scan = new Scanner();
+    Scanner scan = new Scanner(System.in);
 
     public int Menu(){
         System.out.println("Elija una de los siguientes tipos de sorts: ");
@@ -16,4 +16,10 @@ public class Vista {
         int resp = scan.nextInt();
         return resp;
     }
+
+    public void Error(){
+        System.out.println("Error en el sistema");
+    }
+
+
 }
