@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Vista {
 
-    public Vista(){};
+    public Vista(){}
     Scanner scan = new Scanner(System.in);
 
     public int Menu(){
@@ -13,12 +13,33 @@ public class Vista {
         System.out.println("3. Quick Sort ");
         System.out.println("4. Radix Sort ");
         System.out.println("5. Insertion Sort ");
-        int resp = scan.nextInt();
-        return resp;
+        return scan.nextInt();
     }
 
     public void Error(){
         System.out.println("Error en el sistema");
+    }
+
+    public void Correcto(int[] a, int[] b){
+        if(a == b){
+            System.out.println("Sistema ordenado!");
+        } else{
+            Error();
+        }
+
+        imprimir(a);
+    }
+
+    public void Fin(){
+        System.out.println("Saliendo del sistema");
+    }
+
+
+    public void imprimir(int[] e){
+        for (int value : e) {
+            System.out.println(value + " ");
+        }
+        System.out.println(" ");
     }
 
 

@@ -1,31 +1,48 @@
 package Estructuras;
-import java.util.ArrayList;
-import java.util.Collections;
+
+import java.util.Random;
 
 
 public class Archivo {
-    ArrayList<Integer> lista = new ArrayList<>();
-    ArrayList<Integer> listaOrdenada;
+    Random rand = new Random();
+    int[] lista = new int[3000];
+    int[] listaOrdenada;
+
     public Archivo(){
 
         for (int i = 1; i <= 3000; i++){
-            lista.add(i);
+            lista[i] = i;
         }
         listaOrdenada = lista;
-        Collections.shuffle(lista);
+        this.revolver();
+
 
     }
 
     public void revolver(){
-        Collections.shuffle(lista);
+        for(int i = 0; i < lista.length; i++){
+            int randIndex = rand.nextInt(lista.length);
+            int temp = lista[randIndex];
+            lista[randIndex] = lista[i];
+            lista[i] = temp;
+        }
     }
 
-    public ArrayList<Integer> getLista(){
+    public int[] getLista(){
         return lista;
     }
 
-    public ArrayList<Integer> getListaOrdenada(){
+    public int[] getListaOrdenada(){
         return listaOrdenada;
+    }
+
+    public int getFirst(){
+        return lista[0];
+    }
+
+    public int getLast(){
+        return lista[3000];
+
     }
 
 
